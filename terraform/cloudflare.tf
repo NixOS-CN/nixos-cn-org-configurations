@@ -35,3 +35,14 @@ resource "cloudflare_dns_record" "www" {
   content   = "nixos-cn.github.io"
   zone_id = cloudflare_zone.nixos_cn_org.id
 }
+
+# meetup
+
+resource "cloudflare_dns_record" "meetup" {
+  name    = "meetup.nixos-cn.org"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  content   = "nixos-cn.github.io"
+  zone_id = cloudflare_zone.nixos_cn_org.id
+}

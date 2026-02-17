@@ -21,7 +21,7 @@ resource "cloudflare_dns_record" "apex" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  content   = "nixos-cn.github.io"
+  content = "nixos-cn.github.io"
   zone_id = cloudflare_zone.nixos_cn_org.id
 }
 
@@ -32,7 +32,7 @@ resource "cloudflare_dns_record" "www" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  content   = "nixos-cn.github.io"
+  content = "nixos-cn.github.io"
   zone_id = cloudflare_zone.nixos_cn_org.id
 }
 
@@ -43,28 +43,30 @@ resource "cloudflare_dns_record" "meetup" {
   proxied = true
   ttl     = 1
   type    = "A"
-  content   = "8.8.8.8" # just a placeholder, will be redirected to nix.org.cn
+  content = "8.8.8.8" # just a placeholder, will be redirected to nix.org.cn
   zone_id = cloudflare_zone.nixos_cn_org.id
 }
 
 resource "cloudflare_ruleset" "meetup" {
-  zone_id     = cloudflare_zone.nixos_cn_org.id
-  name        = "redirect meetup to nix.org.cn"
-  kind        = "zone"
-  phase       = "http_request_dynamic_redirect"
+  zone_id = cloudflare_zone.nixos_cn_org.id
+  name    = "redirect meetup to nix.org.cn"
+  kind    = "zone"
+  phase   = "http_request_dynamic_redirect"
 
-  rules {
-    ref         = "redirect_old_url"
-    expression  = "(http.host eq \"meetup.nixos-cn.org\")"
-    action      = "redirect"
-    action_parameters {
-      from_value {
-        status_code = 302
-        target_url {
-          value = "https://nix.org.cn"
+  rules = [
+    {
+      ref        = "redirect_old_url"
+      expression = "(http.host eq \"meetup.nixos-cn.org\")"
+      action     = "redirect"
+      action_parameters = {
+        from_value = {
+          status_code = 302
+          target_url = {
+            value = "https://nix.org.cn"
+          }
+          preserve_query_string = false
         }
-        preserve_query_string = false
       }
     }
-  }
+  ]
 }

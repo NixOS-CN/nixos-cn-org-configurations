@@ -2,17 +2,17 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/cloudflare/cloudflare" {
-  version = "5.8.2"
+  version = "5.17.0"
   hashes = [
-    "h1:j46o+tJuP4dYqwlhpt7YSXP67yLXkllfHy5m1dV+CIw=",
-    "zh:92d133a074a8a95143861960508501711a95e0b267c60dbc722eec0a68053e08",
-    "zh:95b1f349c59d226d9005c49b5ac61e856492f75d8be3ca30954a91512f2ebecf",
-    "zh:a439ebd2e21dd6a4cd782563de372dbbac9853a713ba4e90fb3d317764374c2f",
-    "zh:b0a2313cdb113e8ecc058052bcbadaa312a6d093820e69ed97ed96725ad5fd8f",
-    "zh:c14e2790827a78f0e5274ec47f56e4fff41b76db01caf915fb73d5082c75c645",
-    "zh:ef135fce7d3925988fa2675287788da233a1630c23652ae160a1d6c2a9e8ebce",
-    "zh:f01d39efcb3aa7fa8634394caad10ca68abd694d75d2c8b3875516859d8df9b4",
-    "zh:f03391264e01749c17ead5a8ba33a96a568490a8212424c5ae6e113ad50bfc9f",
+    "h1:N6T9tubZNTnj4KhFwEuxA8zn0GNf/pc4HUsj8MXrfPw=",
+    "zh:33e24de8ecccb52b5588893cdfbd2b8942c86a8a855d32892d4be04b4ca8e064",
+    "zh:37bf1f79496650dbb7f6d6241ef54fbf3e1e6f0dbbc644806c0c78acfcdbc57c",
+    "zh:5c5f10424c93f0278cc8b497b3c942e1b17f114d87ed72aa21077e6f1f1e0379",
+    "zh:68bc559574f1a32d0497d22c15f9c07a26a04a0bff17a3f3776ee647e301d3d5",
+    "zh:90c1b92209c1f6435cb5c10a67d0e43b8730624124ce427fde3e529c1ec133aa",
+    "zh:9fdc1b8824ba004aad5bd943430aed523a50f7930ad0f7f04627fdb65d476460",
+    "zh:e3e4684a581a02b76dbd64bc40db25aec6df59e5de6afb266b7178ac4f9044cd",
     "zh:f809ab383cca0a5f83072981c64208cbd7fa67e986a86ee02dd2c82333221e32",
+    "zh:fd28bd284a69c6bdd6df8e34367cfcba7eea04adc245c1c19f6909ff056d8ad4",
   ]
 }

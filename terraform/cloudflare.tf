@@ -48,6 +48,26 @@ resource "cloudflare_dns_record" "meetup" {
   zone_id = cloudflare_zone.nixos_cn_org.id
 }
 
+# cache
+
+resource "cloudflare_dns_record" "cache" {
+  name    = "cache.nixos-cn.org"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  content = "cf.qaq.li" # Cloudflare fallback origin
+  zone_id = cloudflare_zone.nixos_cn_org.id
+}
+
+resource "cloudflare_dns_record" "cache_acme_challenge" {
+  name    = "_acme-challenge.cache.nixos-cn.org"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  content = "cache.nixos-cn.org.733e1898c9e24aea.dcv.cloudflare.com" # Delegated DCV for Cloudflare for SaaS
+  zone_id = cloudflare_zone.nixos_cn_org.id
+}
+
 resource "cloudflare_ruleset" "meetup" {
   zone_id = cloudflare_zone.nixos_cn_org.id
   name    = "redirect meetup to nix.org.cn"

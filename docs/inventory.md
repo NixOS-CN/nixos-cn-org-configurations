@@ -21,3 +21,9 @@ owner: [linyinfeng](https://github.com/linyinfeng)
 
     * [linyinfeng](https://github.com/linyinfeng)
     * [CyrusYip](https://github.com/CyrusYip)
+
+## Cache
+
+owner: [Moraxyc](https://github.com/Moraxyc)
+
+* [`nixos-cn`](https://cache.nixos-cn.org)
